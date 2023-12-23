@@ -1,7 +1,7 @@
-import configparser
+# import configparser
 
-class MyClass:
+# class MyClass:
 
-    config = configparser.ConfigParser()
+#     config = configparser.ConfigParser()
+#     config.read_file()
 
-    
