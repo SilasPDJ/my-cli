@@ -13,14 +13,14 @@ class Cli:
             dest="subcommand", help="Comandos disponíveis")
 
         merge_pdf = self.subparsers.add_parser(
-            'generate_pdf_merge', help="Juntar arquivos PDF")
+            'generate_pdf_merge', help="Juntar arquivos PDF", aliases=['pdf-merge'])
         merge_pdf.add_argument(
             "dir", type=str, help="initial dir folder containing the pdfs to get merged")
         merge_pdf.add_argument(
-            "-save", type=str, default=None, help="Diretório final para a mesclagem dos PDFs (padrão é o mesmo diretório)")
+            "-save", type=str, default=None, help="Diretório final para a mesclagem dos PDFs.")
 
         merge_pdf.add_argument(
-            "-rev", action="store_true", help="if files sorting shall be reversed")
+            "-rev", default=True, help="if files sorting shall be reversed")
 
         # Parse the arguments
         args = self.parser.parse_args()
