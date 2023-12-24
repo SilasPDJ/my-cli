@@ -1,4 +1,4 @@
-from PyPDF2 import PdfFileMerger
+from PyPDF2 import PdfMerger
 import os
 # pdfs = ['file1.pdf', 'file2.pdf', 'file3.pdf', 'file4.pdf'][:2]
 # pdfs = ['pt0.pdf', 'pt1.pdf', 'pt2.pdf', 'pt3.pdf']
@@ -19,12 +19,13 @@ def generate_pdf_merge(path: os.PathLike, destiny: os.PathLike = None, files_are
     Example:
         generate_pdf_merge('/path/to/pdf/files', destiny='/path/to/output', files_are_reversed=True)
     """
+    print("testew")
     files = [os.path.join(path, file)
              for file in os.listdir(path) if file.endswith('pdf')]
 
     files.sort(reverse=files_are_reversed)
 
-    merger = PdfFileMerger()
+    merger = PdfMerger()
     # pdfs = [for pdf in pdfs]
     pdfs = files
 
